@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <order-card @cardOnClick="goTo" v-for="(preOrder, key) in preOrders" :preOrder="preOrder" :key="key"></order-card>
 
     <router-link to="/newpreorder" class=""><h1 class="title is-1">+ Pre Order</h1></router-link>

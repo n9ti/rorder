@@ -58,19 +58,6 @@ export default new Vuex.Store({
           }
           commit('setUser', profile)
           dispatch('bindPreOrdersRef')
-
-          db.ref('contacts/' + profile.uid).once('value').then((snapshot) => {
-            if (!snapshot.val()) {
-              console.log(snapshot.val())
-              router.push('/')
-            } else {
-              if (window.location.pathname === '/login') {
-                router.push('/')
-              }
-              router.push(window.location.pathname)
-            }
-            commit('setReady')
-          })
         } else {
           commit('setUser', null)
           router.push('/login')

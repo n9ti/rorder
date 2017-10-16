@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="">
     <div v-if="preOrder.restaurantName">
-      <div class="has-text-centered">
-        <h1 v-if="preOrder.status === 'close'" class="title is-1 has-text-danger">CLOSE</h1>
+      <div v-if="preOrder.status === 'close'" class="has-text-centered">
+        <h1 class="title is-1 has-text-danger">CLOSE</h1>
         <br>
       </div>
 
