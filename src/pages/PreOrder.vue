@@ -8,6 +8,9 @@
 
       <order-card :preOrder="preOrder"></order-card>
 
+      <input class="input" :value="`https://rorder-123.firebaseapp.com${$route.fullPath}`">
+      <br><br>
+
       <b-field>
         <b-radio-button type="is-primary" v-model="view" native-value="edit">
           Order

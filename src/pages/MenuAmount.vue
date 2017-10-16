@@ -25,12 +25,12 @@
           </td>
         </tr>
       </table>
-
-
-
-
       <hr>
     </div>
+
+
+    <!--  -->
+
 
     <div v-else-if="view === 'detail' && sum > 0">
       <span class="subtitle is-4">
@@ -49,6 +49,10 @@
 
       <hr>
     </div>
+
+
+    <!--  -->
+
 
     <div v-else-if="sum > 0">
       <table width="100%">
