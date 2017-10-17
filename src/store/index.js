@@ -58,6 +58,8 @@ export default new Vuex.Store({
           }
           commit('setUser', profile)
           dispatch('bindPreOrdersRef')
+          router.push('/')
+          commit('setReady')
         } else {
           commit('setUser', null)
           router.push('/login')

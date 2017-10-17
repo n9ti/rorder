@@ -29,11 +29,6 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'app',
   computed: {
-    team () {
-      if (this.userProfile && this.userProfile.customProfile) {
-        return this.userProfile.customProfile.team
-      }
-    },
     ...mapGetters(['userProfile'])
   },
   methods: {
@@ -41,7 +36,6 @@ export default {
       'init'
     ]),
     goBack () {
-      // this.$router.go(-1)
       this.$router.push('/')
     }
   },
@@ -64,12 +58,6 @@ a {
   width: 100px;
   height: 100px;
   border-radius: 50px;
-}
-.team-sellsuki {
-  color: #3273DC;
-}
-.team-flyingcomma {
-  color: #fccd15;
 }
 .is-pointer {
   cursor: pointer;
