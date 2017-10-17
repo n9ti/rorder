@@ -109,9 +109,9 @@ export default {
     share () {
       if (navigator.share) {
         navigator.share({
-          title: 'Web Fundamentals',
+          title: `${this.preOrder.restaurantName}`,
           text: 'Check out Web Fundamentals — it rocks!',
-          url: 'https://developers.google.com/web'
+          url: `https://rorder-123.firebaseapp.com${this.$route.fullPath}`
         })
         .then(() => console.log('Successful share'))
         .catch((error) => console.log('Error sharing', error))
