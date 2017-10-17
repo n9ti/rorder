@@ -8,6 +8,8 @@
 
       <order-card :preOrder="preOrder"></order-card>
 
+      <button v-if="isNavigatorShareAvailable" @click="share()">Share</button>
+
       <input class="input" :value="`https://rorder-123.firebaseapp.com${$route.fullPath}`">
       <br><br>
 
@@ -90,6 +92,12 @@ export default {
     ]),
     isOwner () {
       return this.preOrder.createBy.uid === this.user.uid
+    },
+    isNavigatorShareAvailable () {
+      if (navigator.share) {
+        return true
+      }
+      return false
     }
   },
   methods: {
@@ -97,7 +105,18 @@ export default {
       'bindPreOrderRef',
       'addOtherMenu',
       'closeOrder'
-    ])
+    ]),
+    share () {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Web Fundamentals',
+          text: 'Check out Web Fundamentals — it rocks!',
+          url: 'https://developers.google.com/web'
+        })
+        .then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing', error))
+      }
+    }
   }
 }
 </script>
