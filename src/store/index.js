@@ -58,17 +58,19 @@ export default new Vuex.Store({
           }
           commit('setUser', profile)
           dispatch('bindPreOrdersRef')
-          //
           if (localStorage.routeTemp) {
             router.push(localStorage.routeTemp)
             localStorage.removeItem('routeTemp')
+          } else if (window.location.pathname !== '/login') {
+            router.push(window.location.pathname)
           } else {
             router.push('/')
           }
           commit('setReady')
         } else {
-          console.log(window.location.pathname)
-          localStorage.setItem('routeTemp', window.location.pathname)
+          if (window.location.pathname !== '/login') {
+            localStorage.setItem('routeTemp', window.location.pathname)
+          }
           commit('setUser', null)
           router.push('/login')
           commit('setReady')
